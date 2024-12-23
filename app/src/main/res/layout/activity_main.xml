@@ -1,0 +1,49 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button_select_pdf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select PDF" />
+
+    <Button
+        android:id="@+id/button_show_bottom_sheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Signature Pad"
+        android:visibility="gone"
+        android:layout_below="@id/button_select_pdf" />
+
+    <Button
+        android:id="@+id/button_save_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Position"
+        android:visibility="gone"
+        android:layout_below="@id/button_show_bottom_sheet" />
+
+
+    <FrameLayout
+        android:id="@+id/pdfContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/button_save_position"
+        android:background="@drawable/pdf_view_border">
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/imageViewSignature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        android:contentDescription="Signature Overlay" />
+</RelativeLayout>
